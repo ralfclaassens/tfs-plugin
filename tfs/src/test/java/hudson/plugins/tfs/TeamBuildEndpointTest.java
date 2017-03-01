@@ -2,11 +2,16 @@ package hudson.plugins.tfs;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.mockito.Mock;
+
+import jenkins.model.Jenkins;
 
 /**
  * A class to test {@link TeamBuildEndpoint}.
  */
 public class TeamBuildEndpointTest {
+	@Mock
+    private Jenkins jenkins;
 
     @Test public void decodeCommandAndJobNames_typical() throws Exception {
         final TeamBuildEndpoint cut = new TeamBuildEndpoint();
